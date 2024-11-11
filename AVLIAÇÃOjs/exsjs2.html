@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Números</title>
+</head>
+<body>
+    <h1>Comparador de Números</h1>
+    <button onclick="compararNumeros()">Inserir Números</button>
+    <p id="resultado"></p>
+
+    <script>
+        function compararNumeros() {
+            let numero1 = parseInt(prompt("Digite o primeiro número inteiro:"));
+            let numero2 = parseInt(prompt("Digite o segundo número inteiro:"));
+
+            if (numero1 > numero2) {
+                document.getElementById("resultado").innerText = "O maior número é: " + numero1;
+            } else if (numero2 > numero1) {
+                document.getElementById("resultado").innerText = "O maior número é: " + numero2;
+            }
+        }
+    </script>
+</body>
+</html>

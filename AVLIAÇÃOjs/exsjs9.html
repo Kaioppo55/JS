@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Imagem ao Passar o Mouse</title>
+</head>
+<body>
+    <h2>Imagem Interativa</h2>
+    
+    <img id="imagem" src="imagem1.jpg" alt="Imagem Original" 
+         onmouseover="alterarImagem()" 
+         onmouseout="restaurarImagem()" 
+         style="width: 300px; height: auto;">
+
+    <script>
+        function alterarImagem() {
+            document.getElementById("imagem").src = "IMG😝/BIZARRO.jfif";
+        }
+
+        function restaurarImagem() {
+            document.getElementById("imagem").src = "";
+        }
+    </script>
+</body>
+</html>

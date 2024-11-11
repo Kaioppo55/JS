@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Valor</title>
+</head>
+<body>
+    <h2>Verificar Valor</h2>
+    <input type="number" id="valorInput" placeholder="Digite um valor">
+    <button onclick="verificarValor()">Verificar</button>
+    <div id="resultadoDiv"></div>
+    
+    <script>
+        function verificarValor() {
+            var valor = document.getElementById("valorInput").value;
+            var resultado;
+
+            if (valor === "") {
+                resultado = "Nenhum valor foi informado.";
+            } else if (valor < 0) {
+                resultado = "O valor é menor que zero.";
+            } else if (valor == 0) {
+                resultado = "O valor é zero.";
+            } else {
+                resultado = "O valor é maior que zero.";
+            }
+
+            document.getElementById("resultadoDiv").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

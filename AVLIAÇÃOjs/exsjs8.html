@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Valores</title>
+</head>
+<body>
+    <h2>Soma de Valores Informados</h2>
+    
+    <button onclick="somarValores()">Iniciar</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function somarValores() {
+            let soma = 0;
+            let valor;
+
+            do {
+                valor = parseFloat(prompt("Informe um valor (ou um valor menor ou igual a zero para terminar):"));
+                
+                if (valor > 0) {
+                    soma += valor;
+                }
+            } while (valor > 0);
+
+            document.getElementById("resultado").innerText = "A soma dos valores informados é: " + soma;
+        }
+    </script>
+</body>
+</html>

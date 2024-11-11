@@ -1,0 +1,21 @@
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Frase</title>
+</head>
+<body>
+    <h2>Copiar Frase</h2>
+    <input type="text" id="fraseInput" placeholder="Digite sua frase aqui">
+    <button onclick="copiarFrase()">Copiar</button>
+    <div id="fraseDiv"></div>
+    
+    <script>
+        function copiarFrase() {
+            var frase = document.getElementById("fraseInput").value;
+            document.getElementById("fraseDiv").innerText = frase;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres e Ocultar Parágrafo</title>
+</head>
+<body>
+    <h2>Contador de Caracteres</h2>
+    
+    <textarea id="textoArea" placeholder="Digite seu texto aqui" oninput="atualizarContador()"></textarea>
+    <br>
+    <input type="text" id="contadorInput" readonly>
+
+    <script>
+        function atualizarContador() {
+            var texto = document.getElementById("textoArea").value;
+            document.getElementById("contadorInput").value = texto.length;
+        }
+    </script>
+</body>
+</html>

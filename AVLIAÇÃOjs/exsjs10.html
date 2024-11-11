@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+</head>
+<body>
+
+    <h1>Formulário de Contato</h1>
+
+    <form id="formContato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        // Função para capturar a data atual formatada
+        function obterDataAtual() {
+            const data = new Date();
+            const dia = String(data.getDate()).padStart(2, '0');
+            const mes = String(data.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
+            const ano = data.getFullYear();
+            const horas = String(data.getHours()).padStart(2, '0');
+            const minutos = String(data.getMinutes()).padStart(2, '0');
+            return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+        }
+
+        // Manipulador do evento submit
+        document.getElementById("formContato").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio real do formulário
+
+            // Capturar os dados do formulário
+            const nome = document.getElementById("nome").value;
+            const telefone = document.getElementById("telefone").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            // Capturar a data atual
+            const dataAtual = obterDataAtual();
+
+            // Montar a mensagem de "simulação de envio"
+            const resultado = `
+                <p><strong>Data:</strong> ${dataAtual}</p>
+                <p><strong>Emissor:</strong> ${nome}, Telefone: ${telefone}, E-mail: ${email}</p>
+                <p><strong>Mensagem:</strong> ${mensagem}</p>
+                <p><em>Simulação de envio de e-mail.</em></p>
+            `;
+
+            // Exibir a mensagem no div
+            document.getElementById("resultado").innerHTML = resultado;
+
+            // Limpar o formulário
+            document.getElementById("formContato").reset();
+        });
+    </script>
+
+</body>
+</html>
